@@ -14,7 +14,7 @@ def bisection (a , b, function, tol= 0.0001):
         return bisection(a, midpoint, function, tol)
     elif(mid_derive < 0):
         return bisection(midpoint, b, function, tol)
-    # else: return midpoint
+    else: return midpoint
     
     
 x = sp.symbols("x")
