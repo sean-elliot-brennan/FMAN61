@@ -5,7 +5,8 @@ def bisection (a , b, function, tol= 0.0001):
     df = sp.diff(function, x)
     
     mid_derive = df.subs(x, midpoint)
-    if(math.abs(mid_derive) < tol ):
+    interval_length = abs(a -b)
+    if(interval_length < tol ):
         return midpoint
     if(mid_derive > 0):
         return bisection(a, midpoint, function, tol)
@@ -16,4 +17,4 @@ def bisection (a , b, function, tol= 0.0001):
     
 x = sp.symbols("x")
 function1 = x**2 + 2* x**2 - 5*x
-print(bisection(-100, 100,function) )
+print(bisection(-100, 100,function1) )
