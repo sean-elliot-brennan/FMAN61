@@ -1,6 +1,8 @@
 import sympy as sp
 import math
 def bisection (a , b, function, tol= 0.0001):
+    global count
+    count +=1
     midpoint = (a + b) /2
     df = sp.diff(function, x)
     
@@ -17,4 +19,6 @@ def bisection (a , b, function, tol= 0.0001):
     
 x = sp.symbols("x")
 function1 = x**2 + 2* x**2 - 5*x
+count = 0
 print(bisection(-100, 100,function1) )
+print(f'It took {count} attempts,')
